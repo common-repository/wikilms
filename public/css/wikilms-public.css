@@ -1,0 +1,416 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+:root {
+    --wikilms-primary-color: #3ac5b9;
+    --wikilms-secondary-color: #07294d;
+    --wikilms-tertiary-color: #07294d;
+    --wikilms-heading-color: var(--wikilms-tertiary-color);
+    --wikilms-content-color: #505050;
+    --wikilms-meta-color: #8a8a8a;
+    --wikilms-border-color: #e0e0e0;
+    --wikilms-btn-color: #ffffff;
+    --wikilms-btn-bg-color: #07294d;
+    --wikilms-btn-border-color: #07294d;
+    --wikilms-btn-hover-color: #07294d;
+    --wikilms-btn-bg-hover-color: #3ac5b9;
+    --wikilms-btn-border-hover-color: #3ac5b9;
+}
+.wikilms-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .wikilms-container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .wikilms-container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .wikilms-container {
+        width: 1170px;
+    }
+}
+.wikilms-row {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    gap: 30px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.wikilms-row.wikilms-row-8-4 {
+    display: grid;
+    grid-template-columns: auto 360px;
+    gap: 30px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+@media (max-width: 1200px) {
+    .wikilms-row {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+@media (max-width: 992px) {
+   .wikilms-row.wikilms-row-8-4 {
+        grid-template-columns: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .wikilms-row {
+        display: grid;
+        grid-template-columns: 100%%;
+    }
+}
+/* === Course Single page*/
+
+.wikilms-content-wrapper .wikilms-post-thumbnail {
+    margin-bottom: 20px;
+}
+h2.wikilms-entry-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* === Course Sidebar*/
+
+.course-sidebar-preview {
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #ededed;
+    box-shadow: 0 0 30px rgb(0 0 0 / 5%);
+}
+.wikilms-widget-area .widget.wikilms-course-widget {
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    padding: 30px;
+    margin-top: 30px;
+}
+/* ========Global sidebar course info ====== */
+
+.wikilms-course-info {
+    padding: 0 32px 0 32px;
+    margin-bottom: 40px;
+    background: #fff;
+}
+.wikilms-course-info .wikilms-course-info-title {
+    margin-top: 30px;
+}
+.wikilms-course-info ul.wikilms-course-info {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.wikilms-course-info ul.wikilms-course-info-list {
+    margin: 0;
+    padding: 0;
+}
+.wikilms-course-info ul li {
+    font-size: 15px;
+    overflow: hidden;
+    border-top: 1px solid rgba(204, 204, 204, 0.3);
+    padding: 13px 0;
+}
+.wikilms-course-info ul li span.language-tag.value {
+    display: inline-grid;
+    line-height: 28px;
+}
+.wikilms-course-info ul li:first-child {
+    border-top: none;
+}
+.course-sidebar-preview .entry-post-share {
+    border-top: 1px solid rgba(204, 204, 204, 0.3);
+    padding-top: 25px;
+}
+.wikilms-course-info ul li i {
+    color: var(--wikilms-primary-color);
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+.wikilms-course-info ul li svg {
+    fill: var(--wikilms-primary-color);
+}
+.wikilms-course-info ul li span.value {
+    float: right;
+}
+.wikilms-course-info ul li span.label {
+    font-weight: 500;
+    color: var(--wikilms-content-color);
+}
+.wikilms-course-info .value.wikilms-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--wikilms-primary-color);
+}
+/*
+
+=====Popup Contact forms=====
+
+*/
+
+.wikilms-content-area {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.wikilms-popup-link {
+    display: flex;
+    flex-wrap: wrap;
+}
+.wikilms-btn a {
+    background: var(--wikilms-primary-color);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.wikilms-btn a:hover {
+    background: #07294d;
+    color: #fff;
+}
+.wikilms-popup-container {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 17, 17, 0.61);
+    display: flex;
+    align-items: center;
+}
+.wikilms-popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px 40px;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.wikilms-popup-content a.wikilms-close {
+    color: #aaaaaa;
+    font-size: 30px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-align: right;
+    position: relative;
+    top: -15px;
+    padding-bottom: 10px;
+    left: 100%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.wikilms-popup-content a.wikilms-close:hover {
+    color: #333;
+}
+.wikilms-popup-content span:hover, .wikilms-popup-content span:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.wikilms-popup-container:target {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+/*========= Course archive page ======*/
+
+.pagination-wrap {
+    display: block;
+    clear: both;
+    text-align: center;
+}
+.wikilms-course {
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+}
+.wikilms-course .course__container {
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+.wikilms-course .course__content--info {
+    position: relative;
+    z-index: 1;
+    padding: 20px 30px 10px;
+}
+.wikilms-course .wikilms-post-thumbnail {
+    position: relative;
+}
+.wikilms-course .wikilms-post-thumbnail a:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 22%, rgb(0 0 0 / 60%) 100%);
+}
+.wikilms-course .wikilms-post-thumbnail img {
+    display: block;
+}
+.wikilms-course .tutor-course-loop-header-meta {
+    top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+}
+.wikilms-course .tutor-course-loop-header-meta a {
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 0 11px;
+    line-height: 29px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: var(--wikilms-primary-color);
+    white-space: nowrap;
+    background: #3bbca712;
+}
+.wikilms-course .course__content-meta span {
+    font-size: 13px;
+}
+.wikilms-course .course__content--meta>span {
+    margin-right: 10px;
+}
+.wikilms-course .course__content-meta>span i {
+    margin-right: 2px;
+}
+.wikilms-course .course__border {
+    border-top: 1px solid #ebebeb;
+}
+.wikilms-course .course__content--meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 30px;
+}
+.wikilms-course .course__content--meta:empty {
+    display: none;
+}
+.wikilms-course .course__content--meta>span:last-child {
+    margin-right: 0;
+}
+.wikilms-course .course__content--meta>span {
+    margin-right: 10px;
+}
+.wikilms-course .course__content--meta .price {
+    font-weight: 700;
+    color: var(--wikilms-primary-color);
+}
+.wikilms-course .course__content--meta .price.see__more {
+    font-weight: 500;
+}
+.wikilms-course .course__content--meta span i {
+    margin-right: 2px;
+    font-size: 15px;
+    color: var(--wikilms-primary-color);
+}
+.wikilms-course .course__content--meta span svg {
+    fill: var(--wikilms-primary-color);
+}
+.wikilms-course .course__content--meta>.price {
+    display: inline-block;
+    text-align: right;
+    float: right;
+    color: var(--wikilms-heading-color);
+}
+.wikilms-course .course-price {
+    font-size: 14px;
+    font-weight: 800;
+    min-width: 62px;
+    height: 62px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    box-shadow: 5px 4px 13px 0px rgb(0 0 0 / 11%);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    right: 0;
+    margin-right: 30px;
+    color: #fff;
+    background: var(--wikilms-primary-color);
+}
+.wikilms-course .course__content--meta span {
+    font-size: inherit;
+    font-style: inherit;
+    margin: 0;
+    margin-right: 10px;
+}
+.wikilms-course.layout__6 .course__content--meta span {
+    margin-right: 4px;
+}
+.wikilms-course .course__content--meta span:last-child {
+    margin-right: 0;
+}
+.wikilms-course .course__content--meta span.origin-price {
+    font-size: 0.85em;
+    margin-bottom: 4px;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+.wikilms-course .course__title {
+    line-height: 18px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.wikilms-course .course__title a {
+    color: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    text-decoration: none;
+}
+.wikilms-course.col__6 .course__title a {
+    font-size: 28px;
+    line-height: 37px;
+}
+.wikilms-course.col__4 .course__title a {
+    font-size: 18px;
+    line-height: 27px;
+}
+.wikilms-course .course__title a:hover {
+    color: var(--wikilms-primary-color);
+}
+.wikilms-course .author__name a {
+    color: #686f7a;
+    font-weight: 400;
+    font-size: 15px;
+}
+.wikilms-course .author__name a:hover {
+    color: var(--wikilms-primary-color);
+}
+.wikilms-course .updating-icon:before {
+    margin-right: 0;
+}
+.wikilms-course p.course__excerpt {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
